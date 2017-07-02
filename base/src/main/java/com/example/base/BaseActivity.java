@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
+import android.view.View;
 
 /**
  * Created by chaos
@@ -16,30 +18,30 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context context;
 
-    protected Dialog dialog;
-
-    protected int currentPage;
-
     protected boolean stopped;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        setContentView(getContentView());
 
 
 
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
+    protected View getContentView(){
+        return LayoutInflater.from(this).inflate(setLayoutId(),null);
     }
 
+
+    public abstract int setLayoutId();
+
+
+
+
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -52,8 +54,25 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onNewIntent(intent);
     }
 
+
+    protected void navigate(){
+
+    }
+
+    protected void navigateWithResult(){
+
+    }
+
+
+
+
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStop() {
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
