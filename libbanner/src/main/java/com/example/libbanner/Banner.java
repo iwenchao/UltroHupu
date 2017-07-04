@@ -8,9 +8,13 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.libbanner.utils.Config;
+import com.example.libbanner.view.BannerPager;
 
 import java.util.List;
 
@@ -52,6 +56,12 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     /*data*/
     private List<String> titles;
+    private List<String> pageUrls;
+    private List<View> pageViews;
+    private List<ImageView> pageIndics;
+    private BannerPager bannerPager;
+    private TextView banTitleTv,numIndicInsideTv,numIndicTv;
+
 
     public Banner(@NonNull Context context) {
         this(context,null);
