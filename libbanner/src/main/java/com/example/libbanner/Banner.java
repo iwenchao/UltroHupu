@@ -1,6 +1,7 @@
 package com.example.libbanner;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -8,14 +9,18 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.libbanner.loader.Imageable;
 import com.example.libbanner.utils.Config;
 import com.example.libbanner.view.BannerPager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -61,6 +66,9 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
     private List<ImageView> pageIndics;
     private BannerPager bannerPager;
     private TextView banTitleTv,numIndicInsideTv,numIndicTv;
+    private LinearLayout indicatorLL,indicatorInsideLL,titleLL;
+    private Imageable imageLoader;
+
 
 
     public Banner(@NonNull Context context) {
@@ -73,8 +81,30 @@ public class Banner extends FrameLayout implements ViewPager.OnPageChangeListene
 
     public Banner(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        initField(context);
+        initAttrs(context,attrs);
+        initView(context);
 
+    }
+
+    private void initField(Context context){
         this.context = context;
+        pageUrls = new ArrayList<>();
+        pageViews = new ArrayList<>();
+        pageIndics = new ArrayList<>();
+
+        DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        indicSize = dm.widthPixels / 80;
+    }
+
+    private void initAttrs(Context context, AttributeSet attrs){
+        if( attrs == null) return;
+
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.Banner);
+
+    }
+
+    private void initView(Context context){
 
     }
 
