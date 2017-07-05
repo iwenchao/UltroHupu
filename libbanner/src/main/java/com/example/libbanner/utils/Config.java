@@ -14,24 +14,13 @@ public class Config {
         /**
          *
          */
-        public static enum Style {
-            NO_INDICATOR(0),
-            CIRCLE_INDICATOR(1),
-            NUM_INDICATOR(2),
-            NUM_WITH_TITLE_INDICATOR(3),
-            CIRCLE_WITH_TITLE_INDICATOR(4),
-            CIRCLE_WITH_INSIDE_TITLE_INDICATOR(5);
-
-
-            private int value;
-
-            private Style(int value) {
-                this.value = value;
-            }
-
-            public int getValue() {
-                return value;
-            }
+        public  static class Style {
+            public static final int   NO_INDICATOR = 0;
+            public static final int  CIRCLE_INDICATOR= 1;
+            public static final int  NUM_INDICATOR= 2;
+            public static final int  NUM_WITH_TITLE_INDICATOR= 3;
+            public static final int  CIRCLE_WITH_TITLE_INDICATOR= 4;
+            public static final int  CIRCLE_WITH_INSIDE_TITLE_INDICATOR= 5;
 
 
         }
@@ -40,20 +29,10 @@ public class Config {
         /**
          *
          */
-        public static enum Gravity {
-            LEFT(0),
-            CENTER(1),
-            RIGHT(2);
-
-            private int value;
-
-            private Gravity(int value) {
-                this.value = value;
-            }
-
-            public int getValue() {
-                return value;
-            }
+        public  static class Gravity {
+            public static final int LEFT = 0;
+            public static final int  CENTER = 1;
+            public static final int RIGHT = 2;
         }
     }
 
@@ -65,6 +44,15 @@ public class Config {
         public static final int DURATION = 800;
         public static final boolean AUTO_PLAY = true;
         public static final boolean CAN_SCROLL = true;
+
+
+        /**
+         * title style
+         */
+        public static final int TITLE_BACKGROUND = -1;
+        public static final int TITLE_HEIGHT = -1;
+        public static final int TITLE_TEXT_COLOR = -1;
+        public static final int TITLE_TEXT_SIZE = -1;
     }
 
 

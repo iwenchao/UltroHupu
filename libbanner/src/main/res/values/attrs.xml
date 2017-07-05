@@ -3,7 +3,7 @@
     <declare-styleable name="Banner">
         <attr name="delay_time" format="integer"/>
         <attr name="scroll_duration" format="integer"/>
-        <attr name="auto_plat" format="boolean"/>
+        <attr name="auto_play" format="boolean"/>
         <attr name="title_background" format="color|reference"/>
         <attr name="title_textcolor" format="color" />
         <attr name="title_textsize" format="dimension" />

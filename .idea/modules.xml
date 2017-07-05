@@ -4,8 +4,11 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/UltroHupu.iml" filepath="$PROJECT_DIR$/.idea/UltroHupu.iml" />
       <module fileurl="file://D:\work\personal\month1707\UltroHupu\UltroHupu.iml" filepath="D:\work\personal\month1707\UltroHupu\UltroHupu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://D:\work\personal\month1707\UltroHupu\app\app.iml" filepath="D:\work\personal\month1707\UltroHupu\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/base/base.iml" filepath="$PROJECT_DIR$/base/base.iml" />
       <module fileurl="file://D:\work\personal\month1707\UltroHupu\base\base.iml" filepath="D:\work\personal\month1707\UltroHupu\base\base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/libbanner/libbanner.iml" filepath="$PROJECT_DIR$/libbanner/libbanner.iml" />
     </modules>
   </component>
 </project>
