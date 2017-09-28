@@ -1,6 +1,5 @@
 package com.example.base;
 
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +17,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected Context context;
 
-    protected boolean stopped;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,13 +64,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
 }
