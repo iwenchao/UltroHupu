@@ -10,13 +10,15 @@ def versionCode = 5644
 //依赖库配置版本
 def supportAppcompatV7 = "25.1.0"
 def constraintLayout = "1.0.2"
-def butterknifeVersion = "8.8.1"
-def butterknifeCompileVersion = "8.8.1"
-def butterkinfePlugin = "8.8.1"
+def butterKnifeVersion = "8.8.1"
+def butterKnifeCompileVersion = "8.8.1"
+def butterKnifePlugin = "8.8.1"
 
 //Testing tools
 def jUnitVersion = "4.12"
 def assertJVersion = "1.7.1"
+def testRunnerVersion = "0.5"
+def testRulesVersion = "0.5"
 
 project.ext {
     dependencies = [
@@ -30,13 +32,15 @@ project.ext {
 
             "gradleVersion"            : "com.android.tools.build:gradle:${toolsGradleVersion}",
             "supportAppcompatV7"       : "com.android.support:appcompat-v7:${supportAppcompatV7}",
-            "butterknifeVersion"       : "com.jakewharton:butterknife:${butterknifeVersion}",
-            "butterknifeCompileVersion": "com.jakewharton:butterknife-compiler:${butterknifeCompileVersion}",
-            "butterkinfePlugin"        : "com.jakewharton:butterknife-gradle-plugin:${butterkinfePlugin}",
+            "butterknifeVersion"       : "com.jakewharton:butterknife:${butterKnifeVersion}",
+            "butterknifeCompileVersion": "com.jakewharton:butterknife-compiler:${butterKnifeCompileVersion}",
+            "butterkinfePlugin"        : "com.jakewharton:butterknife-gradle-plugin:${butterKnifePlugin}",
 
             //Testing
             "junit"                    : "junit:junit:${jUnitVersion}",
             "assertj"                  : "org.assertj:assertj-core:${assertJVersion}",
+            "testRunner"               : "com.android.support.test:runner:${testRunnerVersion}",
+            "testRules"                : "com.android.support.test:runner:${testRulesVersion}",
             "AndroidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
             "constraintLayout"         : "com.android.support.constraint:constraint-layout:${constraintLayout}"
     ]

@@ -1,4 +1,4 @@
-package com.example.chaos.ultrohupu;
+package com.chaos.ultrohupu;
 
 import android.os.Bundle;
 
@@ -13,8 +13,4 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    public int setLayoutId() {
-        return R.layout.activity_main;
-    }
 }

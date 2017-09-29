@@ -1,6 +1,6 @@
 package com.chaos.widget.imp;
 
-import android.view.View;
+import android.util.AttributeSet;
 
 /**
  * Created by huangdou
@@ -10,7 +10,7 @@ import android.view.View;
 public interface ViewInterface {
 
 
-    void initView(View view);
+    void initAttr(AttributeSet attrs);
 
-    void initAttr();
+    void initView();
 }

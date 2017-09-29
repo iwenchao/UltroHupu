@@ -38,8 +38,11 @@ dependencies {
     testCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    androidTestCompile rootProject.ext.dependencies["testRunner"]
+    androidTestCompile rootProject.ext.dependencies["testRules"]
     testCompile rootProject.ext.dependencies["junit"]
 
+    compile project(":common")
     compile rootProject.ext.dependencies["supportAppcompatV7"]
     compile rootProject.ext.dependencies["butterknifeVersion"]
     annotationProcessor rootProject.ext.dependencies["butterknifeCompileVersion"]
