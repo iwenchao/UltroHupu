@@ -11,10 +11,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
 
 
-
-
-
-
     }
 
     @Override

@@ -1,5 +1,5 @@
 def applicationId = "com.example.chaos.ultrohupu"
-def toolsGradleVersion = "2.3.1"
+def toolsGradleVersion = "2.3.3"
 def buildToolsVersion = '25.0.0'
 def compileSdkVersion = 25
 def minSdkVersion = 16
@@ -12,6 +12,7 @@ def supportAppcompatV7 = "25.1.0"
 def constraintLayout = "1.0.2"
 def butterknifeVersion = "8.8.1"
 def butterknifeCompileVersion = "8.8.1"
+def butterkinfePlugin = "8.8.1"
 
 //Testing tools
 def jUnitVersion = "4.12"
@@ -31,6 +32,7 @@ project.ext {
             "supportAppcompatV7"       : "com.android.support:appcompat-v7:${supportAppcompatV7}",
             "butterknifeVersion"       : "com.jakewharton:butterknife:${butterknifeVersion}",
             "butterknifeCompileVersion": "com.jakewharton:butterknife-compiler:${butterknifeCompileVersion}",
+            "butterkinfePlugin"        : "com.jakewharton:butterknife-gradle-plugin:${butterkinfePlugin}",
 
             //Testing
             "junit"                    : "junit:junit:${jUnitVersion}",

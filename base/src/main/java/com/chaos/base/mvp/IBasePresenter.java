@@ -7,9 +7,9 @@ package com.example.base.mvp;
  * Description:
  */
 
-public interface BasePresenter {
+public interface IBasePresenter {
 
-    void on();
+    void onDestroy();
 
 
 }

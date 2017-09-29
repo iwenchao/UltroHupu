@@ -16,7 +16,6 @@ import java.util.List;
  * Description:
  *
  * @note T 实体对象
- *
  */
 
 public abstract class AbstractAdapter<T> extends BaseAdapter {
@@ -40,7 +39,7 @@ public abstract class AbstractAdapter<T> extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return dataList==null?0:dataList.size();
+        return dataList == null ? 0 : dataList.size();
     }
 
     @Override
@@ -54,8 +53,8 @@ public abstract class AbstractAdapter<T> extends BaseAdapter {
     }
 
 
-    public View inflate(@LayoutRes int layoutId){
-        return layoutInflater.inflate(layoutId,null);
+    public View inflate(@LayoutRes int layoutId) {
+        return layoutInflater.inflate(layoutId, null);
     }
 
 
@@ -68,8 +67,8 @@ public abstract class AbstractAdapter<T> extends BaseAdapter {
     }
 
 
-    protected void addAll(List<T> list){
-        if(list != null){
+    protected void addAll(List<T> list) {
+        if (list != null) {
             dataList.addAll(list);
         }
     }
