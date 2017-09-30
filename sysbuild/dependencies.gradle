@@ -42,6 +42,7 @@ project.ext {
             "testRunner"               : "com.android.support.test:runner:${testRunnerVersion}",
             "testRules"                : "com.android.support.test:runner:${testRulesVersion}",
             "AndroidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",
-            "constraintLayout"         : "com.android.support.constraint:constraint-layout:${constraintLayout}"
+            "constraintLayout"         : "com.android.support.constraint:constraint-layout:${constraintLayout}",
+            "umeng"                    : "com.umeng.analytics:analytics:latest.integration"
     ]
 }

@@ -51,5 +51,6 @@ dependencies {
 
     compile rootProject.ext.dependencies["supportAppcompatV7"]
     compile rootProject.ext.dependencies["constraintLayout"]
+    compile rootProject.ext.dependencies["umeng"]//友盟
     compile project(path: ':base')
 }
