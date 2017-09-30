@@ -5,10 +5,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+
+import com.chaos.widget.main.WidActionTitleBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,27 +20,12 @@ import butterknife.ButterKnife;
 public class BaseActivity extends AppCompatActivity {
 
     protected Context mContext;
-
-    @BindView(R2.id.titleBarLeftIcon)
-    ImageView mTitleBarLeftIcon;
-    @BindView(R2.id.titleBarNameIcon)
-    ImageView mTitleBarNameIcon;
-    @BindView(R2.id.titleBarNameTxt)
-    TextView mTitleBarNameTxt;
-    @BindView(R2.id.titleBarNameFL)
-    FrameLayout mTitleBarNameFL;
-    @BindView(R2.id.titleBarRightTxt)
-    TextView mTitleBarRightTxt;
-    @BindView(R2.id.titleBarRightIcon)
-    ImageView mTitleBarRightIcon;
-    @BindView(R2.id.titleBarRight)
-    LinearLayout mTitleBarRight;
-    @BindView(R2.id.appTitleBar)
-    RelativeLayout mAppTitleBar;
     @BindView(R2.id.contentLayout)
     FrameLayout mContentLayout;
     @BindView(R2.id.rootContentView)
     LinearLayout mRootContentView;
+    @BindView(R2.id.actionTitleBar)
+    WidActionTitleBar mActionTitleBar;
 
 
     @Override

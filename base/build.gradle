@@ -43,4 +43,5 @@ dependencies {
     compile rootProject.ext.dependencies["butterknifeVersion"]
     annotationProcessor rootProject.ext.dependencies["butterknifeCompileVersion"]
     compile project(':common')
+    compile project(':widget')
 }
