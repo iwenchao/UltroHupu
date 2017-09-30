@@ -1,15 +1,27 @@
 package com.chaos.ultrohupu;
 
 import android.os.Bundle;
+import android.view.View;
 
-import com.example.base.BaseActivity;
+import com.chaos.base.AbstractBaseActivity;
 
-public class MainActivity extends BaseActivity {
+
+public class MainActivity extends AbstractBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
+    }
+
+    @Override
+    protected void initUILay(View view) {
+
+    }
+
+    @Override
+    protected void loadInitDta() {
 
     }
 
