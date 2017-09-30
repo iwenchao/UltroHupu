@@ -7,6 +7,7 @@
     android:background="@color/holo_red_dark">
 
     <LinearLayout
+        android:id="@+id/titleBarLeftLay"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/app_title_bar_left_icon_height"
         android:layout_centerVertical="true"

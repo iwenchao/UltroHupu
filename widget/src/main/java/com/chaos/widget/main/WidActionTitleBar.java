@@ -35,14 +35,16 @@ public class WidActionTitleBar extends View implements ViewInterface {
     ImageView mTitleBarNameIcon;
     @BindView(R2.id.titleBarNameTxt)
     TextView mTitleBarNameTxt;
-    @BindView(R2.id.titleBarNameFL)
-    FrameLayout mTitleBarNameFL;
     @BindView(R2.id.titleBarRightTxt)
     TextView mTitleBarRightTxt;
     @BindView(R2.id.titleBarRightIcon)
     ImageView mTitleBarRightIcon;
+    @BindView(R2.id.titleBarLeftLay)
+    LinearLayout mTitleBarLeftLay;
+    @BindView(R2.id.titleBarNameFL)
+    FrameLayout mTitleBarNameFL;
     @BindView(R2.id.titleBarRight)
-    LinearLayout mTitleBarRight;
+    LinearLayout mTitleBarRightLay;
     @BindView(R2.id.appTitleBar)
     RelativeLayout mAppTitleBar;
     private Context mContext;
@@ -111,7 +113,10 @@ public class WidActionTitleBar extends View implements ViewInterface {
         ButterKnife.bind(mContainer);
     }
 
-
+    /**
+     * @param title
+     * @param titleIcon
+     */
     public void setTitleBar(String title, Integer titleIcon) {
         mTitleBarNameTxt.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
         if (!TextUtils.isEmpty(title)) {
@@ -125,6 +130,53 @@ public class WidActionTitleBar extends View implements ViewInterface {
 
     public void setTitleBar(int titleId, int titleIcon) {
         setTitleBar(getResources().getString(titleId), titleIcon);
+    }
+
+    /**
+     *
+     * @param title
+     * @param titleIcon
+     * @param leftListener
+     */
+    public void setTitleBarLeft(String title, Integer titleIcon, OnClickListener leftListener) {
+        mTitleBarLeftText.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
+        if (!TextUtils.isEmpty(title)) {
+            mTitleBarLeftText.setText(title);
+        }
+        mTitleBarLeftIcon.setVisibility(titleIcon == null ? GONE : VISIBLE);
+        if (titleIcon != null) {
+            mTitleBarLeftIcon.setImageResource(titleIcon);
+        }
+        if (leftListener != null) {
+            mTitleBarLeftLay.setOnClickListener(leftListener);
+        }
+    }
+
+    public void setTitleBarLeft(int titleId, Integer titleIcon, OnClickListener leftListener) {
+        setTitleBarLeft(getResources().getString(titleId), titleIcon, leftListener);
+    }
+
+    /**
+     * @param title
+     * @param titleIcon
+     * @param rightListener
+     */
+    public void setTitleBarRight(String title, Integer titleIcon, OnClickListener rightListener) {
+        mTitleBarRightTxt.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
+        if (!TextUtils.isEmpty(title)) {
+            mTitleBarRightTxt.setText(title);
+        }
+        mTitleBarRightIcon.setVisibility(titleIcon == null ? GONE : VISIBLE);
+        if (titleIcon != null) {
+            mTitleBarRightIcon.setImageResource(titleIcon);
+        }
+        if (rightListener != null) {
+            mTitleBarRightLay.setOnClickListener(rightListener);
+        }
+    }
+
+    public void setTitleBarRight(int titleId, Integer titleIcon, OnClickListener rightListener) {
+        setTitleBarRight(getResources().getString(titleId), titleIcon, rightListener);
     }
 
 }
