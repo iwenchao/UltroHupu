@@ -35,6 +35,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
 
     protected Context mContext;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

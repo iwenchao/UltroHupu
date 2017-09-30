@@ -6,7 +6,7 @@ import android.view.View;
 import com.chaos.base.AbstractBaseActivity;
 
 
-public class MainActivity extends AbstractBaseActivity {
+public class HomeActivity extends AbstractBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
