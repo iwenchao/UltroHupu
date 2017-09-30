@@ -3,6 +3,7 @@ package com.example.base;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -17,9 +18,9 @@ import butterknife.ButterKnife;
  * on 17-7-2.
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends FragmentActivity {
 
-    protected Context mContext;
+
     @BindView(R2.id.contentLayout)
     FrameLayout mContentLayout;
     @BindView(R2.id.rootContentView)
@@ -27,6 +28,7 @@ public class BaseActivity extends AppCompatActivity {
     @BindView(R2.id.actionTitleBar)
     WidActionTitleBar mActionTitleBar;
 
+    protected Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

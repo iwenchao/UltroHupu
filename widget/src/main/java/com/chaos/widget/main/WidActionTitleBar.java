@@ -179,4 +179,12 @@ public class WidActionTitleBar extends View implements ViewInterface {
         setTitleBarRight(getResources().getString(titleId), titleIcon, rightListener);
     }
 
+    public void setTitleLeftListener(OnClickListener leftListener) {
+        mTitleBarLeftLay.setOnClickListener(leftListener);
+    }
+
+    public void setTitleRightListener(OnClickListener rightListener) {
+        mTitleBarRightLay.setOnClickListener(rightListener);
+    }
+
 }
