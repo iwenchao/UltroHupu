@@ -3,6 +3,7 @@ package com.chaos.widget.main;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,8 @@ import butterknife.ButterKnife;
 
 public class WidActionTitleBar extends View implements ViewInterface {
 
+    @BindView(R2.id.titleBarLeftText)
+    TextView mTitleBarLeftText;
     @BindView(R2.id.titleBarLeftIcon)
     ImageView mTitleBarLeftIcon;
     @BindView(R2.id.titleBarNameIcon)
@@ -64,7 +67,41 @@ public class WidActionTitleBar extends View implements ViewInterface {
     @Override
     public void initAttr(AttributeSet attrs) {
         TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.WidActionTitleBar);
-
+        String leftText = ta.getString(R.styleable.WidActionTitleBar_leftText);
+        int leftIconId = ta.getResourceId(R.styleable.WidActionTitleBar_leftIcon, R.drawable.title_bar_left_icon_selector);
+        String titleText = ta.getString(R.styleable.WidActionTitleBar_titleTxt);
+        int titleIconId = ta.getResourceId(R.styleable.WidActionTitleBar_titleIcon, -1);
+        String rightText = ta.getString(R.styleable.WidActionTitleBar_rightText);
+        int rightIconId = ta.getResourceId(R.styleable.WidActionTitleBar_rightIcon, R.drawable.search_btn_board_day);
+        //左侧图文
+        if (!TextUtils.isEmpty(leftText)) {
+            mTitleBarLeftText.setText(leftText);
+        } else {
+            mTitleBarLeftText.setVisibility(GONE);
+        }
+        mTitleBarLeftIcon.setImageResource(leftIconId);
+        //title部分
+        if (!TextUtils.isEmpty(titleText)) {
+            mTitleBarNameTxt.setText(titleText);
+        } else {
+            mTitleBarNameTxt.setVisibility(GONE);
+        }
+        if (titleIconId != -1) {
+            mTitleBarNameIcon.setImageResource(titleIconId);
+        } else {
+            mTitleBarNameIcon.setVisibility(GONE);
+        }
+        //右侧图文
+        if (!TextUtils.isEmpty(rightText)) {
+            mTitleBarRightTxt.setText(leftText);
+        } else {
+            mTitleBarRightTxt.setVisibility(GONE);
+        }
+        if (rightIconId != -1) {
+            mTitleBarRightIcon.setImageResource(rightIconId);
+        } else {
+            mTitleBarRightIcon.setVisibility(GONE);
+        }
         ta.recycle();
     }
 
@@ -73,4 +110,21 @@ public class WidActionTitleBar extends View implements ViewInterface {
         mContainer = LayoutInflater.from(mContext).inflate(R.layout.action_title_bar_layout, null);
         ButterKnife.bind(mContainer);
     }
+
+
+    public void setTitleBar(String title, Integer titleIcon) {
+        mTitleBarNameTxt.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
+        if (!TextUtils.isEmpty(title)) {
+            mTitleBarNameTxt.setText(title);
+        }
+        mTitleBarNameIcon.setVisibility(titleIcon == null ? GONE : VISIBLE);
+        if (titleIcon != null) {
+            mTitleBarNameIcon.setImageResource(titleIcon);
+        }
+    }
+
+    public void setTitleBar(int titleId, int titleIcon) {
+        setTitleBar(getResources().getString(titleId), titleIcon);
+    }
+
 }
