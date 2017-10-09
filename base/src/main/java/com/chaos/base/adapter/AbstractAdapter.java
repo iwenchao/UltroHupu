@@ -1,10 +1,9 @@
-package com.example.base.adapter;
+package com.chaos.base.adapter;
 
 import android.content.Context;
 import android.support.annotation.LayoutRes;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
 import java.util.List;

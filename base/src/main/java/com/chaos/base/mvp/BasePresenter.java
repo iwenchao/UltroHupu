@@ -1,4 +1,4 @@
-package com.example.base.mvp;
+package com.chaos.base.mvp;
 
 /**
  * Created by chaos

@@ -1,4 +1,4 @@
-package com.example.base.adapter;
+package com.chaos.base.adapter;
 
 /**
  * Created by huangdou
