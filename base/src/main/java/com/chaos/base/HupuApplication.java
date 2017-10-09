@@ -18,7 +18,10 @@ public class HupuApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        HPRouter.init(this);
+        initRouter();
+    }
 
+    private void initRouter() {
+        HPRouter.init(this);
     }
 }

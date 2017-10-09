@@ -14,9 +14,12 @@
     1. OkHttp／Retrofit
     2. RxJava2
     3. ButterKnife
+        1. [入门介绍](https://github.com/JakeWharton/butterknife)
     4. glide/Picasso
     5. realm
     6. PullLoadMoreRecycleView
     7. Dagger2
+        1. [入门介绍](http://www.jianshu.com/p/65737ac39c44)
     8. ARouter
+        1. [入门介绍](https://github.com/alibaba/ARouter)
 3. 使用git，并且进行代码审查husky以及lint-staged
