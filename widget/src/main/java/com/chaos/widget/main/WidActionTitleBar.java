@@ -113,6 +113,13 @@ public class WidActionTitleBar extends View implements ViewInterface {
         ButterKnife.bind(mContainer);
     }
 
+    public void setTitleBar(String title) {
+        mTitleBarNameTxt.setVisibility(TextUtils.isEmpty(title) ? GONE : VISIBLE);
+        if (!TextUtils.isEmpty(title)) {
+            mTitleBarNameTxt.setText(title);
+        }
+    }
+
     /**
      * @param title
      * @param titleIcon

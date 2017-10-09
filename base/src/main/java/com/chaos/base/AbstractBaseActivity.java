@@ -58,6 +58,75 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     protected abstract void loadInitDta();
 
 
+    /**
+     * @param title
+     */
+    protected void setTitleBar(String title) {
+        mActionTitleBar.setTitleBar(title);
+    }
+
+    /**
+     * @param title
+     * @param titleIcon
+     */
+    public void setTitleBar(String title, Integer titleIcon) {
+        mActionTitleBar.setTitleBar(title, titleIcon);
+    }
+
+    /**
+     * @param title
+     * @param titleIcon
+     * @param leftListener
+     */
+    public void setTitleBarLeft(String title, Integer titleIcon, View.OnClickListener leftListener) {
+        mActionTitleBar.setTitleBarLeft(title, titleIcon, leftListener);
+    }
+
+    /**
+     * @param titleId
+     * @param titleIcon
+     * @param leftListener
+     */
+    public void setTitleBarLeft(int titleId, Integer titleIcon, View.OnClickListener leftListener) {
+        mActionTitleBar.setTitleBarLeft(titleId, titleIcon, leftListener);
+    }
+
+    /**
+     * @param title
+     * @param titleIcon
+     * @param rightListener
+     */
+    public void setTitleBarRight(String title, Integer titleIcon, View.OnClickListener rightListener) {
+        mActionTitleBar.setTitleBarRight(title, titleIcon, rightListener);
+    }
+
+    /**
+     * @param titleId
+     * @param titleIcon
+     * @param rightListener
+     */
+    public void setTitleBarRight(int titleId, Integer titleIcon, View.OnClickListener rightListener) {
+        mActionTitleBar.setTitleBarRight(titleId, titleIcon, rightListener);
+    }
+
+    /**
+     * @param leftListener
+     */
+    public void setTitleLeftListener(View.OnClickListener leftListener) {
+        mActionTitleBar.setOnClickListener(leftListener);
+    }
+
+    /**
+     * @param rightListener
+     */
+    public void setTitleRightListener(View.OnClickListener rightListener) {
+        mActionTitleBar.setOnClickListener(rightListener);
+    }
+
+    /**
+     * @param eventType
+     * @param params
+     */
     @Override
     public void onReconnect(String eventType, List params) {
         //默认不处理
