@@ -71,11 +71,8 @@ public class HPRouter {
      * @param bundle
      * @param resultCode
      */
-    public static void navigateResultBack(Activity cActivity, Bundle bundle, int resultCode) {
-        Intent bIntent = new Intent();
-        bIntent.putExtras(bundle);
-        cActivity.setResult(resultCode, bIntent);
-        cActivity.finish();
+    public static void navigateResultBack(Activity cActivity, Bundle bundle, Integer resultCode) {
+        navigateResultBack(cActivity, bundle, resultCode, null);
     }
 
     /**
@@ -84,10 +81,10 @@ public class HPRouter {
      * @param resultCode
      * @param flag
      */
-    public static void navigateResultBack(Activity cActivity, Bundle bundle, int resultCode, int flag) {
+    public static void navigateResultBack(Activity cActivity, Bundle bundle, int resultCode, Integer flag) {
         Intent bIntent = new Intent();
         bIntent.putExtras(bundle);
-        bIntent.addFlags(flag);
+        if (flag != null) bIntent.addFlags(flag);
         cActivity.setResult(resultCode, bIntent);
         cActivity.finish();
     }

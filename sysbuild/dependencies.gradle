@@ -15,7 +15,8 @@ def butterKnifeCompileVersion = "8.8.1"
 def butterKnifePlugin = "8.8.1"
 def aliRouter = "1.2.2"
 def aliRouterCompiler = "1.1.3"
-
+def dagger = "2.11"
+def daggerCompiler = "2.11"
 
 //Testing tools
 def jUnitVersion = "4.12"
@@ -40,6 +41,8 @@ project.ext {
             "butterkinfePlugin"        : "com.jakewharton:butterknife-gradle-plugin:${butterKnifePlugin}",
             "aliRouter"                : "com.alibaba:arouter-api:${aliRouter}",
             "aliRouterCompiler"        : "com.alibaba:arouter-compiler:${aliRouterCompiler}",
+            "dagger"                   : "com.google.dagger:dagger:${dagger}",
+            "daggerCompiler"           : "com.google.dagger:dagger-compiler:${daggerCompiler}",
 
             //Testing
             "junit"                    : "junit:junit:${jUnitVersion}",
