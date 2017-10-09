@@ -13,6 +13,9 @@ def constraintLayout = "1.0.2"
 def butterKnifeVersion = "8.8.1"
 def butterKnifeCompileVersion = "8.8.1"
 def butterKnifePlugin = "8.8.1"
+def aliRouter = "1.2.2"
+def aliRouterCompiler = "1.1.3"
+
 
 //Testing tools
 def jUnitVersion = "4.12"
@@ -35,6 +38,8 @@ project.ext {
             "butterknifeVersion"       : "com.jakewharton:butterknife:${butterKnifeVersion}",
             "butterknifeCompileVersion": "com.jakewharton:butterknife-compiler:${butterKnifeCompileVersion}",
             "butterkinfePlugin"        : "com.jakewharton:butterknife-gradle-plugin:${butterKnifePlugin}",
+            "aliRouter"                : "com.alibaba:arouter-api:${aliRouter}",
+            "aliRouterCompiler"        : "com.alibaba:arouter-compiler:${aliRouterCompiler}",
 
             //Testing
             "junit"                    : "junit:junit:${jUnitVersion}",

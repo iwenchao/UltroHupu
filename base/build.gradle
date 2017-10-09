@@ -23,7 +23,11 @@ android {
         versionName rootProject.ext.dependencies["versionName"]
 
         testInstrumentationRunner rootProject.ext.dependencies["AndroidJUnitRunner"]
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [ moduleName : project.getName() ]
+            }
+        }
     }
     buildTypes {
         release {
@@ -40,8 +44,12 @@ dependencies {
     })
     testCompile rootProject.ext.dependencies["junit"]
     compile rootProject.ext.dependencies["supportAppcompatV7"]
+
+
     compile rootProject.ext.dependencies["butterknifeVersion"]
     annotationProcessor rootProject.ext.dependencies["butterknifeCompileVersion"]
+    compile rootProject.ext.dependencies["aliRouter"]
+    annotationProcessor rootProject.ext.dependencies["aliRouterCompiler"]
     compile project(':common')
     compile project(':widget')
 }
