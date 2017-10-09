@@ -26,10 +26,10 @@ import butterknife.ButterKnife;
 public abstract class AbstractBaseActivity extends FragmentActivity implements OnNetReconnectListener {
 
 
-    @BindView(R2.id.contentLayout)
-    FrameLayout mContentLayout;
     @BindView(R2.id.rootContentView)
     LinearLayout mRootContentView;
+    @BindView(R2.id.contentLayout)
+    FrameLayout mContentLayout;
     @BindView(R2.id.actionTitleBar)
     WidActionTitleBar mActionTitleBar;
 
@@ -40,8 +40,10 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_container_layout);
-        ButterKnife.bind(this);
+        ButterKnife.bind(mRootContentView);
 
+        initUILay(mContentLayout);
+        loadInitDta();
 
     }
 

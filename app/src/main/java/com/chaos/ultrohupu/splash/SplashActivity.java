@@ -9,7 +9,7 @@ import com.chaos.base.AbstractBaseActivity;
  * on 2017/10/9.
  */
 
-public class SplashActivity extends AbstractBaseActivity {
+public class SplashActivity extends AbstractBaseActivity implements SplashConstract.View {
 
 
     @Override
