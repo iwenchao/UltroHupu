@@ -16,6 +16,11 @@ public class HomeActivity extends AbstractBaseActivity {
     }
 
     @Override
+    public int getContentLayoutId() {
+        return 0;
+    }
+
+    @Override
     protected void initUILay(View view) {
 
     }

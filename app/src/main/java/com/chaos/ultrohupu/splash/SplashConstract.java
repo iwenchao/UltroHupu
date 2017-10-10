@@ -1,8 +1,8 @@
 package com.chaos.ultrohupu.splash;
 
-import com.chaos.base.mvp.BaseModel;
-import com.chaos.base.mvp.BaseView;
+import com.chaos.base.mvp.IBaseModel;
 import com.chaos.base.mvp.IBasePresenter;
+import com.chaos.base.mvp.IBaseView;
 
 /**
  * Created by huangdou
@@ -15,14 +15,14 @@ public interface SplashConstract {
     /**
      *
      */
-    interface Model extends BaseModel {
+    interface Model extends IBaseModel {
 
     }
 
     /**
      *
      */
-    interface View extends BaseView {
+    interface View extends IBaseView {
 
     }
 

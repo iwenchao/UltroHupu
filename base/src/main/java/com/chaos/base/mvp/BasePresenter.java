@@ -7,7 +7,7 @@ package com.chaos.base.mvp;
  * Description:
  */
 
-public abstract class BasePresenter<M extends BaseModel, V extends BaseView> implements IBasePresenter {
+public abstract class BasePresenter<M extends IBaseModel, V extends IBaseView> implements IBasePresenter {
 
     protected M mModel;
     protected V mView;

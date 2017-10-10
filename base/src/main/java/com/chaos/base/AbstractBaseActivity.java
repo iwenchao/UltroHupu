@@ -34,18 +34,26 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     WidActionTitleBar mActionTitleBar;
 
     protected Context mContext;
+    protected int contentLayoutId;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_container_layout);
-        ButterKnife.bind(mRootContentView);
+        ButterKnife.bind(this);
 
         initUILay(mContentLayout);
         loadInitDta();
 
     }
+
+    /**
+     * 获得当前页面的布局
+     *
+     * @return
+     */
+    public abstract int getContentLayoutId();
 
     /**
      * 初始化当前页面的布局设置

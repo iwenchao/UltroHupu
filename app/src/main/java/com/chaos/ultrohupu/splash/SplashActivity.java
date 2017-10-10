@@ -1,10 +1,14 @@
 package com.chaos.ultrohupu.splash;
 
 import android.view.View;
+import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chaos.base.AbstractBaseActivity;
+import com.chaos.ultrohupu.R;
 import com.chaos.ultrohupu.constant.RouterPath;
+
+import butterknife.BindView;
 
 /**
  * Created by huangdou
@@ -15,6 +19,17 @@ import com.chaos.ultrohupu.constant.RouterPath;
 public class SplashActivity extends AbstractBaseActivity implements SplashConstract.View {
 
 
+    @BindView(R.id.splashAdImg)
+    ImageView mSplashAdImg;
+    @BindView(R.id.splashLogo)
+    ImageView mSplashLogo;
+
+
+    @Override
+    public int getContentLayoutId() {
+        return R.layout.activity_splash;
+    }
+
     @Override
     protected void initUILay(View view) {
 
@@ -24,4 +39,5 @@ public class SplashActivity extends AbstractBaseActivity implements SplashConstr
     protected void loadInitDta() {
 
     }
+
 }
