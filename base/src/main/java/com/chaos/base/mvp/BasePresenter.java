@@ -12,13 +12,13 @@ public abstract class BasePresenter<M extends BaseModel, V extends BaseView> imp
     protected M mModel;
     protected V mView;
 
-    public BasePresenter(V mView) {
-        this.mView = mView;
+    public BasePresenter(V v) {
+        this.mView = v;
     }
 
-    public BasePresenter(M mModel, V mView) {
-        this.mModel = mModel;
-        this.mView = mView;
+    public BasePresenter(M m, V v) {
+        this.mModel = m;
+        this.mView = v;
     }
 
     @Override

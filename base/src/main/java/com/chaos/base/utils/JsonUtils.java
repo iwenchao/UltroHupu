@@ -21,6 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Inject;
+
 /**
  * Created by huangdou
  * on 2017/10/10.
@@ -33,6 +35,7 @@ public class JsonUtils {
 
     private ObjectMapper objectMapper = null;
 
+    @Inject
     public JsonUtils(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
