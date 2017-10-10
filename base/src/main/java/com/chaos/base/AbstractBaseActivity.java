@@ -12,8 +12,7 @@ import android.widget.LinearLayout;
 
 import com.chaos.base.imp.OnNetReconnectListener;
 import com.chaos.widget.main.WidActionTitleBar;
-import com.example.base.R;
-import com.example.base.R2;
+import com.chaos.widget.main.WidNetProgressView;
 
 import java.util.List;
 
@@ -26,7 +25,7 @@ import butterknife.ButterKnife;
  */
 
 public abstract class AbstractBaseActivity extends FragmentActivity implements OnNetReconnectListener {
-
+    protected Context mContext;
 
     @BindView(R2.id.rootContentView)
     LinearLayout mRootContentView;
@@ -36,17 +35,21 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     WidActionTitleBar mActionTitleBar;
     @BindView(R2.id.emptyLayout)
     FrameLayout mEmptyLayout;
+    @BindView(R2.id.progressView)
+    WidNetProgressView mProgressView;
+    @BindView(R2.id.progressLayout)
+    FrameLayout mProgressLayout;
 
-    protected Context mContext;
-
+    //有数据内容部分
     protected ViewGroup mContentView;
+    //当前页面布局id
     protected int contentLayoutId;
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_container_layout);
+        setContentView(R.layout.activity_base_layout);
         inflateContentUi();
         ButterKnife.bind(this);
 
@@ -60,16 +63,14 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * 获得当前页面的布局
-     *
-     * @return
+     * @return 获得当前页面的布局
      */
     public abstract int getContentLayoutId();
 
     /**
      * 初始化当前页面的布局设置
      *
-     * @param view
+     * @param view 当前页面视图
      */
     protected abstract void initUILay(View view);
 
@@ -80,73 +81,74 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
 
 
     /**
-     * @param title
+     * @param title 标题
      */
     protected void setTitleBar(String title) {
         mActionTitleBar.setTitleBar(title);
     }
 
     /**
-     * @param title
-     * @param titleIcon
+     * @param title 标题
+     * @param titleIcon 标题图片
      */
     public void setTitleBar(String title, Integer titleIcon) {
         mActionTitleBar.setTitleBar(title, titleIcon);
     }
 
     /**
-     * @param title
-     * @param titleIcon
-     * @param leftListener
+     * @param title 标题
+     * @param titleIcon 标题图片
+     * @param leftListener 监听器
      */
     public void setTitleBarLeft(String title, Integer titleIcon, View.OnClickListener leftListener) {
         mActionTitleBar.setTitleBarLeft(title, titleIcon, leftListener);
     }
 
     /**
-     * @param titleId
-     * @param titleIcon
-     * @param leftListener
+     * @param titleId 标题资源id
+     * @param titleIcon 标题图片
+     * @param leftListener 监听器
      */
     public void setTitleBarLeft(int titleId, Integer titleIcon, View.OnClickListener leftListener) {
         mActionTitleBar.setTitleBarLeft(titleId, titleIcon, leftListener);
     }
 
     /**
-     * @param title
-     * @param titleIcon
-     * @param rightListener
+     * @param title 标题
+     * @param titleIcon 标题图片
+     * @param rightListener 监听器
      */
     public void setTitleBarRight(String title, Integer titleIcon, View.OnClickListener rightListener) {
         mActionTitleBar.setTitleBarRight(title, titleIcon, rightListener);
     }
 
     /**
-     * @param titleId
-     * @param titleIcon
-     * @param rightListener
+     * @param titleId 标题资源id
+     * @param titleIcon 标题图片
+     * @param rightListener 监听器
      */
     public void setTitleBarRight(int titleId, Integer titleIcon, View.OnClickListener rightListener) {
         mActionTitleBar.setTitleBarRight(titleId, titleIcon, rightListener);
     }
 
     /**
-     * @param leftListener
+     * @param leftListener 监听器
      */
     public void setTitleLeftListener(View.OnClickListener leftListener) {
         mActionTitleBar.setOnClickListener(leftListener);
     }
 
     /**
-     * @param rightListener
+     * @param rightListener 监听器
      */
     public void setTitleRightListener(View.OnClickListener rightListener) {
         mActionTitleBar.setOnClickListener(rightListener);
     }
 
+
     /**
-     * @param eventType
-     * @param params
+     * @param eventType 事件类型
+     * @param params 参数
      */
     @Override
     public void onReconnect(String eventType, List params) {

@@ -40,7 +40,7 @@ public class WidNetProgressView extends android.support.v7.widget.AppCompatImage
     public void initAttr(AttributeSet attrs) {
         try {
             TypedArray ta = mContext.obtainStyledAttributes(attrs, R.styleable.WidNetProgressView);
-            int loadingStyleId = ta.getInt(R.styleable.WidNetProgressView_loading_render, 0);
+            int loadingStyleId = ta.getInt(R.styleable.WidNetProgressView_loading_renderer, 0);
             LoadingRenderer loadingRenderer = LoadingRendererFactory.createLoadingRenderer(mContext, loadingStyleId);
             setLoadingRender(loadingRenderer);
             ta.recycle();
