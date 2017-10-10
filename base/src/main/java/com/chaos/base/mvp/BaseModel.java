@@ -7,7 +7,11 @@ package com.chaos.base.mvp;
  * Description:
  */
 
-public interface BaseModel {
+public abstract class BaseModel {
 
+
+    public BaseModel() {
+
+    }
 
 }

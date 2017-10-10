@@ -43,15 +43,22 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile rootProject.ext.dependencies["junit"]
+
     compile rootProject.ext.dependencies["supportAppcompatV7"]
-
-
     compile rootProject.ext.dependencies["butterknifeVersion"]
     annotationProcessor rootProject.ext.dependencies["butterknifeCompileVersion"]
     compile rootProject.ext.dependencies["aliRouter"]
     annotationProcessor rootProject.ext.dependencies["aliRouterCompiler"]
     compile rootProject.ext.dependencies["dagger"]
     annotationProcessor rootProject.ext.dependencies["daggerCompiler"]
+    compile rootProject.ext.dependencies["jacksonCore"]
+    compile rootProject.ext.dependencies["jacksonAnnotations"]
+    compile rootProject.ext.dependencies["jacksonDatabind"]
+    compile rootProject.ext.dependencies["apacheCommonLang3"]
+    compile rootProject.ext.dependencies["logger"]
+
+
     compile project(':common')
     compile project(':widget')
+
 }
