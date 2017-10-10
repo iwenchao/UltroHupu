@@ -2,15 +2,20 @@ package com.chaos.base;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.chaos.base.imp.OnNetReconnectListener;
+import com.chaos.base.mvp.IBaseView;
 import com.chaos.widget.main.WidActionTitleBar;
 import com.chaos.widget.main.WidNetProgressView;
 
@@ -24,21 +29,21 @@ import butterknife.ButterKnife;
  * on 17-7-2.
  */
 
-public abstract class AbstractBaseActivity extends FragmentActivity implements OnNetReconnectListener {
+public abstract class AbstractBaseActivity extends FragmentActivity implements OnNetReconnectListener, IBaseView {
     protected Context mContext;
 
     @BindView(R2.id.rootContentView)
-    LinearLayout mRootContentView;
+    LinearLayout mRootContentView;//根视图
     @BindView(R2.id.contentLayout)
-    FrameLayout mContentLayout;
+    FrameLayout mContentLayout;//内容视图
     @BindView(R2.id.actionTitleBar)
-    WidActionTitleBar mActionTitleBar;
+    WidActionTitleBar mActionTitleBar;//应用标题栏
     @BindView(R2.id.emptyLayout)
-    FrameLayout mEmptyLayout;
+    FrameLayout mEmptyLayout;//空数据内容显示
     @BindView(R2.id.progressView)
-    WidNetProgressView mProgressView;
+    WidNetProgressView mProgressView;//刷新内容显示
     @BindView(R2.id.progressLayout)
-    FrameLayout mProgressLayout;
+    FrameLayout mProgressLayout;//刷新内容显示
 
     //有数据内容部分
     protected ViewGroup mContentView;
@@ -79,6 +84,10 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
      */
     protected abstract void loadInitDta();
 
+    public Context getContext() {
+        return mContext;
+    }
+
 
     /**
      * @param title 标题
@@ -88,7 +97,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * @param title 标题
+     * @param title     标题
      * @param titleIcon 标题图片
      */
     public void setTitleBar(String title, Integer titleIcon) {
@@ -96,8 +105,8 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * @param title 标题
-     * @param titleIcon 标题图片
+     * @param title        标题
+     * @param titleIcon    标题图片
      * @param leftListener 监听器
      */
     public void setTitleBarLeft(String title, Integer titleIcon, View.OnClickListener leftListener) {
@@ -105,8 +114,8 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * @param titleId 标题资源id
-     * @param titleIcon 标题图片
+     * @param titleId      标题资源id
+     * @param titleIcon    标题图片
      * @param leftListener 监听器
      */
     public void setTitleBarLeft(int titleId, Integer titleIcon, View.OnClickListener leftListener) {
@@ -114,8 +123,8 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * @param title 标题
-     * @param titleIcon 标题图片
+     * @param title         标题
+     * @param titleIcon     标题图片
      * @param rightListener 监听器
      */
     public void setTitleBarRight(String title, Integer titleIcon, View.OnClickListener rightListener) {
@@ -123,8 +132,8 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
     /**
-     * @param titleId 标题资源id
-     * @param titleIcon 标题图片
+     * @param titleId       标题资源id
+     * @param titleIcon     标题图片
      * @param rightListener 监听器
      */
     public void setTitleBarRight(int titleId, Integer titleIcon, View.OnClickListener rightListener) {
@@ -146,9 +155,58 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     }
 
 
+    public void setEmptyUI(boolean showEmpty) {
+        setEmptyLayout(showEmpty, -1, -1);
+    }
+
+
+    public void setEmptyLayout(boolean showEmpty, Integer emptyTxtId, Integer emptyIcon) {
+        setEmptyLayout(showEmpty, getString(emptyTxtId), emptyIcon);
+    }
+
+    public void setEmptyLayout(boolean showEmpty, String emptyTxt, Integer emptyIcon) {
+        setEmptyLayout(showEmpty, emptyTxt, -1, emptyIcon);
+    }
+
+    public void setEmptyLayout(boolean showEmpty, String emptyTxt, @ColorInt Integer emptyTxtColor, Integer emptyIcon) {
+        if (showEmpty) {
+            mProgressLayout.setVisibility(View.GONE);
+            mContentLayout.setVisibility(View.GONE);
+            mEmptyLayout.setVisibility(View.VISIBLE);
+
+            if (!TextUtils.isEmpty(emptyTxt)) {
+                ((TextView) mEmptyLayout.findViewById(R.id.emptyTxt)).setText(emptyTxt);
+            } else {/*default*/}
+            if (emptyTxtColor != null) {
+                ((TextView) mEmptyLayout.findViewById(R.id.emptyTxt)).setTextColor(emptyTxtColor);
+            } else {/*default*/}
+            if (emptyIcon != null) {
+                ((ImageView) mEmptyLayout.findViewById(R.id.emptyImg)).setImageResource(emptyIcon);
+            } else {/*default*/}
+
+        } else {
+            mProgressLayout.setVisibility(View.GONE);
+            mEmptyLayout.setVisibility(View.GONE);
+            mContentLayout.setVisibility(View.VISIBLE);
+        }
+
+    }
+
+
+    @Override
+    public void showNetLoading(boolean show) {
+        if (show) {
+            mProgressLayout.setVisibility(View.VISIBLE);
+            mEmptyLayout.setVisibility(View.GONE);
+            mContentLayout.setVisibility(View.GONE);
+        } else {
+            mProgressLayout.setVisibility(View.GONE);
+        }
+    }
+
     /**
      * @param eventType 事件类型
-     * @param params 参数
+     * @param params    参数
      */
     @Override
     public void onReconnect(String eventType, List params) {

@@ -6,4 +6,7 @@ package com.chaos.base.mvp;
  */
 
 public interface IBaseView {
+
+    void showNetLoading(boolean show);
+
 }
