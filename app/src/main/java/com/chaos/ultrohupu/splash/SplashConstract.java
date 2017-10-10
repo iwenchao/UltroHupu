@@ -17,6 +17,8 @@ public interface SplashConstract {
      */
     interface Model extends IBaseModel {
 
+        int getSplashRandomRes();
+
     }
 
     /**
@@ -24,12 +26,16 @@ public interface SplashConstract {
      */
     interface View extends IBaseView {
 
+        void updateContent();
+
     }
 
     /**
      *
      */
     interface Presenter extends IBasePresenter {
+
+        void fetchSplashRes();
 
     }
 }

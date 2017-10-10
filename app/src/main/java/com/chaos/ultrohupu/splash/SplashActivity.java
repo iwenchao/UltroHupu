@@ -15,6 +15,7 @@ import butterknife.BindView;
  * on 2017/10/9.
  * 启动页：启动三秒后，进入home
  */
+
 @Route(path = RouterPath.SPLASH_ACTIVITY)
 public class SplashActivity extends AbstractBaseActivity implements SplashConstract.View {
 
@@ -40,4 +41,8 @@ public class SplashActivity extends AbstractBaseActivity implements SplashConstr
 
     }
 
+    @Override
+    public void updateContent() {
+
+    }
 }

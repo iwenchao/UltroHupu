@@ -56,7 +56,8 @@ dependencies {
     compile rootProject.ext.dependencies["jacksonDatabind"]
     compile rootProject.ext.dependencies["apacheCommonLang3"]
     compile rootProject.ext.dependencies["logger"]
-
+    compile rootProject.ext.dependencies["leakcanary-debug"]
+    compile rootProject.ext.dependencies["leakcanary-release"]
 
     compile project(':common')
     compile project(':widget')

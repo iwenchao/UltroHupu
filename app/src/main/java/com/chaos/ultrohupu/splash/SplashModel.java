@@ -2,6 +2,8 @@ package com.chaos.ultrohupu.splash;
 
 import com.chaos.base.mvp.BaseModel;
 
+import javax.inject.Inject;
+
 /**
  * Created by huangdou
  * on 2017/10/10.
@@ -9,5 +11,12 @@ import com.chaos.base.mvp.BaseModel;
 
 public class SplashModel extends BaseModel implements SplashConstract.Model {
 
+    @Inject
+    public SplashModel() {
+    }
 
+    @Override
+    public int getSplashRandomRes() {
+        return 0;
+    }
 }
