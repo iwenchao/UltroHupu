@@ -4,7 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 
@@ -32,8 +34,12 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     FrameLayout mContentLayout;
     @BindView(R2.id.actionTitleBar)
     WidActionTitleBar mActionTitleBar;
+    @BindView(R2.id.emptyLayout)
+    FrameLayout mEmptyLayout;
 
     protected Context mContext;
+
+    protected ViewGroup mContentView;
     protected int contentLayoutId;
 
 
@@ -41,11 +47,16 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_container_layout);
+        inflateContentUi();
         ButterKnife.bind(this);
 
         initUILay(mContentLayout);
         loadInitDta();
+    }
 
+    private void inflateContentUi() {
+        contentLayoutId = getContentLayoutId();
+        mContentView = (ViewGroup) LayoutInflater.from(this).inflate(contentLayoutId, mContentLayout, true);
     }
 
     /**

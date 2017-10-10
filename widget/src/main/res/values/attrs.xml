@@ -50,4 +50,13 @@
         <attr name="ntb_preview_colors" format="reference" />
     </declare-styleable>
 
+
+    <declare-styleable name="WidNetProgressView">
+        <attr name="loading_render">
+            <!--circle rotate-->
+            <enum name="MaterialLoadingRenderer" value="0" />
+        </attr>
+    </declare-styleable>
+
+
 </resources>
