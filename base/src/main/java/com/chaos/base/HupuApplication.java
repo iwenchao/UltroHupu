@@ -14,12 +14,15 @@ import com.squareup.leakcanary.RefWatcher;
  */
 
 public class HupuApplication extends Application {
+
     private RefWatcher mRefWatcher;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        //
         initLeaker();
+        //
         initRouter();
     }
 
