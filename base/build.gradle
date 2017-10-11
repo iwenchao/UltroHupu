@@ -58,6 +58,12 @@ dependencies {
     compile rootProject.ext.dependencies["logger"]
     compile rootProject.ext.dependencies["leakcanary-debug"]
     compile rootProject.ext.dependencies["leakcanary-release"]
+    compile rootProject.ext.dependencies["retrofit"]
+    compile rootProject.ext.dependencies["retrofitConvertJackson"]
+    compile rootProject.ext.dependencies["rxjava2"]
+    compile rootProject.ext.dependencies["rxandroid"]
+    compile rootProject.ext.dependencies["okhttp3"]
+
 
     compile project(':common')
     compile project(':widget')

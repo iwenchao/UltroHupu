@@ -39,6 +39,7 @@ android {
         disable 'IconDensities'             //For testing purpose. This is safe to remove.
         disable 'IconMissingDensityFolder'  //For testing purpose. This is safe to remove.
     }
+
 }
 
 dependencies {
@@ -52,6 +53,5 @@ dependencies {
     compile rootProject.ext.dependencies["supportAppcompatV7"]
     compile rootProject.ext.dependencies["constraintLayout"]
     compile rootProject.ext.dependencies["umeng"]//友盟
-
     compile project(path: ':base')
 }

@@ -25,6 +25,11 @@ def apacheCommonLang3 = "3.6"
 def logger = "1.3"
 def leakcanaryDebug = "1.5.4"
 def leakcanaryRelease = "1.5.4"
+def retrofit = "2.3.0"
+def rxjava2 = "2.1.3"
+def rxandroid = "2.0.1"
+def okhttp3 = "3.9.0"
+def testCompileOkhttp3 = "3.9.0"
 
 //Testing tools
 def jUnitVersion = "4.12"
@@ -59,6 +64,13 @@ project.ext {
             "logger"                   : "com.orhanobut:logger:${logger}",
             "leakcanary-debug"         : "com.squareup.leakcanary:leakcanary-android:${leakcanaryDebug}",
             "leakcanary-release"       : "com.squareup.leakcanary:leakcanary-android:${leakcanaryRelease}",
+            "retrofit"                 : "com.squareup.retrofit2:retrofit:${retrofit}",
+            "retrofitConvertJackson"   : "com.squareup.retrofit2:converter-jackson:${retrofit}",
+            "retrofitConvertGson"      : "com.squareup.retrofit2:converter-gson:${retrofit}",
+            "rxjava2"                  : "io.reactivex.rxjava2:rxjava:${rxjava2}",
+            "rxandroid"                : "io.reactivex.rxjava2:rxandroid:${rxandroid}",
+            "okhttp3"                  : "com.squareup.okhttp3:okhttp:${okhttp3}",
+            "testCompileOkhttp3"       : "com.squareup.okhttp3:mockwebserver:${testCompileOkhttp3}",
 
             //Testing
             "junit"                    : "junit:junit:${jUnitVersion}",
