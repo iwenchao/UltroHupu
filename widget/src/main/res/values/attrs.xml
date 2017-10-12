@@ -59,4 +59,17 @@
     </declare-styleable>
 
 
+    <declare-styleable name="WidJumpView">
+        <attr name="outLineColor" format="color" />
+        <attr name="outLineWidth" format="integer" />
+        <attr name="circleColor" format="color" />
+        <attr name="circleRadius" format="integer" />
+        <attr name="progressColor" format="color" />
+        <attr name="progressLineWidth" format="integer" />
+        <attr name="duration" format="integer" />
+        <attr name="text" format="reference" />
+
+
+    </declare-styleable>
+
 </resources>
