@@ -1,4 +1,4 @@
-package com.chaos.widget.main;
+package com.chaos.widget.main.render;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
@@ -13,6 +13,8 @@ import android.support.v4.view.animation.LinearOutSlowInInterpolator;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
+
+import com.chaos.widget.main.NavigationTabBar;
 
 public class NavigationTabBarBehavior extends VerticalScrollingBehavior<NavigationTabBar> {
 

@@ -1,4 +1,4 @@
-package com.chaos.widget.main;
+package com.chaos.widget.main.render;
 
 
 import android.annotation.TargetApi;

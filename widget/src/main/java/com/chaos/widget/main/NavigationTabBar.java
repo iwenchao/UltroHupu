@@ -41,6 +41,7 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Scroller;
 
 import com.chaos.widget.R;
+import com.chaos.widget.main.render.NavigationTabBarBehavior;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

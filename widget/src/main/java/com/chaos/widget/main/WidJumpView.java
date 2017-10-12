@@ -19,7 +19,7 @@ import java.util.TimerTask;
  * Created by huangdou
  * on 2017/10/12.
  *
- * @Description 控件实现了引导页的倒计时
+ * 控件实现了引导页的倒计时
  */
 
 public class WidJumpView extends android.support.v7.widget.AppCompatTextView {
@@ -36,7 +36,6 @@ public class WidJumpView extends android.support.v7.widget.AppCompatTextView {
     private int mProgressLineWidth = 4;//px
     private int mProgress = 0;
 
-    private int mCenterX, mCenterY;
 
     private int mDuration = 2000;//ms
     private int mInterval = 500;//ms
@@ -77,12 +76,12 @@ public class WidJumpView extends android.support.v7.widget.AppCompatTextView {
     public void initAttr(AttributeSet attrs) {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.WidJumpView);
         mOutLineColor = typedArray.getColor(R.styleable.WidJumpView_outLineColor, 0xFF888888);
-        mOutLineWidth = typedArray.getInteger(R.styleable.WidJumpView_outLineWidth, 4);
+        mOutLineWidth = typedArray.getInt(R.styleable.WidJumpView_outLineWidth, 4);
         mCircleColor = typedArray.getColor(R.styleable.WidJumpView_circleColor, 0x99888888);
-        mCircleRadius = typedArray.getInteger(R.styleable.WidJumpView_circleRadius, 30);
+        mCircleRadius = typedArray.getInt(R.styleable.WidJumpView_circleRadius, 30);
         mProgressLineColor = typedArray.getColor(R.styleable.WidJumpView_progressColor, Color.RED);
-        mProgressLineWidth = typedArray.getInteger(R.styleable.WidJumpView_progressLineWidth, 4);
-        mDuration = typedArray.getInteger(R.styleable.WidJumpView_duration, 2000);
+        mProgressLineWidth = typedArray.getInt(R.styleable.WidJumpView_progressLineWidth, 4);
+        mDuration = typedArray.getInt(R.styleable.WidJumpView_duration, 2000);
         mJumpText = typedArray.getString(R.styleable.WidJumpView_text);
         typedArray.recycle();
     }
@@ -107,8 +106,8 @@ public class WidJumpView extends android.support.v7.widget.AppCompatTextView {
         //找到view的边界
         getDrawingRect(mBounds);
         // 确定圆心
-        mCenterX = mBounds.centerX();
-        mCenterY = mBounds.centerY();
+        int mCenterX = mBounds.centerX();
+        int mCenterY = mBounds.centerY();
 
         //画圆
         mPaint.reset();
@@ -150,11 +149,14 @@ public class WidJumpView extends android.support.v7.widget.AppCompatTextView {
         setDuration(time, 500);
     }
 
+    public void setJumpAction(OnJumpAction onJumpAction) {
+        mJumpAction = onJumpAction;
+    }
     /**
      * 倒计时时间应该被interval整除，每隔interval毫秒更新一次UI
      *
-     * @param time
-     * @param interval
+     * @param time  一个周期
+     * @param interval  每次间隔，默认为500ms
      */
     public void setDuration(int time, int interval) {
         mDuration = time;
