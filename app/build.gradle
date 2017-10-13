@@ -53,6 +53,8 @@ dependencies {
     compile rootProject.ext.dependencies["constraintLayout"]
     compile rootProject.ext.dependencies["umeng"]//友盟
     compile rootProject.ext.dependencies["glide"]//
+    compile rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["daggerCompiler"]
 
     compile project(path: ':base')
 }

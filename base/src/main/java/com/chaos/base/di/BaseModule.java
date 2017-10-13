@@ -8,7 +8,7 @@ import dagger.Module;
  * 该类包含全局对象的依赖注入
  */
 
-@Module
+@Module()
 public class BaseModule {
 
 

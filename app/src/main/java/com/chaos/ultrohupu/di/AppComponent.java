@@ -1,21 +1,18 @@
 package com.chaos.ultrohupu.di;
 
-import com.chaos.base.di.BaseModule;
+import com.chaos.ultrohupu.splash.ui.SplashActivity;
 
-import javax.inject.Singleton;
-
-import dagger.Component;
+import dagger.Subcomponent;
 
 /**
  * Created by huangdou
  * on 2017/10/13.
  */
-@Singleton
-@Component(modules = {
-        AppModule.class,
-        BaseModule.class,
+@Subcomponent(modules = {
+        AppModule.class
 })
 public interface AppComponent {
 
+    void inject(SplashActivity splashActivity);
 
 }

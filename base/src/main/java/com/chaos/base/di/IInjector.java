@@ -9,5 +9,6 @@ public interface IInjector {
 
     void initComponent();
 
+
     void inject(Object target);
 }

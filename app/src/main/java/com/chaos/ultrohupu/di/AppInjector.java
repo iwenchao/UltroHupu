@@ -8,11 +8,13 @@ import com.chaos.base.di.IInjector;
  * 该类需要被反射调用 混淆时避开该类
  */
 
-public class Injector implements IInjector {
-
+public class AppInjector implements IInjector {
+    static AppComponent sAppComponent;
+    static AppModule sAppModule;
 
     @Override
     public void initComponent() {
+
 
     }
 
