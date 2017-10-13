@@ -21,7 +21,7 @@ public class HomeActivity extends AbstractBaseActivity {
     }
 
     @Override
-    protected void initUILay(View view) {
+    protected void initThings(View view) {
 
     }
 

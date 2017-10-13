@@ -1,4 +1,4 @@
-package com.chaos.ultrohupu.splash;
+package com.chaos.ultrohupu.splash.ui;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -7,6 +7,11 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chaos.base.AbstractBaseActivity;
 import com.chaos.ultrohupu.R;
 import com.chaos.ultrohupu.constant.RouterPath;
+import com.chaos.ultrohupu.splash.contract.SplashContract;
+import com.chaos.ultrohupu.splash.presenter.SplashPresenter;
+import com.chaos.widget.main.WidJumpView;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 
@@ -17,13 +22,18 @@ import butterknife.BindView;
  */
 
 @Route(path = RouterPath.SPLASH_ACTIVITY)
-public class SplashActivity extends AbstractBaseActivity implements SplashConstract.View {
+public class SplashActivity extends AbstractBaseActivity implements SplashContract.View {
 
 
     @BindView(R.id.splashAdImg)
     ImageView mSplashAdImg;
     @BindView(R.id.splashLogo)
     ImageView mSplashLogo;
+    @BindView(R.id.splashJump)
+    WidJumpView mSplashJump;
+
+    @Inject
+    SplashContract.Presenter mPresenter;
 
 
     @Override
@@ -32,17 +42,20 @@ public class SplashActivity extends AbstractBaseActivity implements SplashConstr
     }
 
     @Override
-    protected void initUILay(View view) {
+    protected void initThings(View view) {
+
+        mPresenter = new SplashPresenter(this);
 
     }
+
 
     @Override
     protected void loadInitDta() {
-
+        mPresenter.fetchSplashRes();
     }
 
     @Override
-    public void updateContent() {
+    public void updateContent(String imageUrl) {
 
     }
 }

@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".splash.SplashActivity" />
+        <activity android:name=".splash.ui.SplashActivity" />
 
 
         <!--友盟统计-->

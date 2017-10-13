@@ -49,9 +49,10 @@ dependencies {
     })
     testCompile rootProject.ext.dependencies["junit"]
 
-
     compile rootProject.ext.dependencies["supportAppcompatV7"]
     compile rootProject.ext.dependencies["constraintLayout"]
     compile rootProject.ext.dependencies["umeng"]//友盟
+    compile rootProject.ext.dependencies["glide"]//
+
     compile project(path: ':base')
 }

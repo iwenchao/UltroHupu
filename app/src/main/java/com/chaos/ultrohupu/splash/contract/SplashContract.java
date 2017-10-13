@@ -1,4 +1,4 @@
-package com.chaos.ultrohupu.splash;
+package com.chaos.ultrohupu.splash.contract;
 
 import com.chaos.base.mvp.IBaseModel;
 import com.chaos.base.mvp.IBasePresenter;
@@ -9,7 +9,7 @@ import com.chaos.base.mvp.IBaseView;
  * on 2017/10/9.
  */
 
-public interface SplashConstract {
+public interface SplashContract {
 
 
     /**
@@ -17,7 +17,7 @@ public interface SplashConstract {
      */
     interface Model extends IBaseModel {
 
-        int getSplashRandomRes();
+        String getSplashRandomRes();
 
     }
 
@@ -26,7 +26,7 @@ public interface SplashConstract {
      */
     interface View extends IBaseView {
 
-        void updateContent();
+        void updateContent(String imageUrl);
 
     }
 

@@ -58,7 +58,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
         inflateContentUi();
         ButterKnife.bind(this);
 
-        initUILay(mContentLayout);
+        initThings(mContentLayout);
         loadInitDta();
     }
 
@@ -77,7 +77,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
      *
      * @param view 当前页面视图
      */
-    protected abstract void initUILay(View view);
+    protected abstract void initThings(View view);
 
     /**
      * 加载初始数据
