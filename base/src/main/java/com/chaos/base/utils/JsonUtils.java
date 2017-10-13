@@ -39,7 +39,6 @@ public class JsonUtils {
     public JsonUtils(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-//	    this.objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
     }
 
     public String getNodeText(String name, String result) {

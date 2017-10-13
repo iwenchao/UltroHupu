@@ -17,7 +17,6 @@ public class SplashPresenter extends BasePresenter<SplashContract.View> implemen
     SplashModel mModel;
 
 
-    @Inject
     public SplashPresenter(SplashContract.View view) {
         super(view);
     }

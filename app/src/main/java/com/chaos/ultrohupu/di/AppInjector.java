@@ -1,6 +1,8 @@
 package com.chaos.ultrohupu.di;
 
-import com.chaos.base.di.IInjector;
+import com.chaos.base.di.imp.IInjector;
+import com.chaos.ultrohupu.HomeActivity;
+import com.chaos.ultrohupu.splash.ui.SplashActivity;
 
 /**
  * Created by huangdou
@@ -9,17 +11,20 @@ import com.chaos.base.di.IInjector;
  */
 
 public class AppInjector implements IInjector {
-    static AppComponent sAppComponent;
-    static AppModule sAppModule;
 
+    static AppComponent sAppComponent;
     @Override
     public void initComponent() {
-
+        sAppComponent = DaggerAppComponent.builder().appModule(new AppModule()).build();
 
     }
 
     @Override
     public void inject(Object target) {
-
+        if (target instanceof SplashActivity) {
+            sAppComponent.inject((SplashActivity) target);
+        } else if (target instanceof HomeActivity) {
+            sAppComponent.inject((HomeActivity) target);
+        }
     }
 }
