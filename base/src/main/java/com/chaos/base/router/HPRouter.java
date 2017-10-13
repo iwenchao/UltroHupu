@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 
@@ -23,6 +24,21 @@ public class HPRouter {
      */
     public static void init(Application application) {
         ARouter.init(application);
+    }
+
+    /**
+     * @param activity
+     */
+    public static void inject(Activity activity) {
+        ARouter.getInstance().inject(activity);
+    }
+
+    /**
+     * @param fragment
+     */
+
+    public static void inject(Fragment fragment) {
+        ARouter.getInstance().inject(fragment);
     }
 
     /**

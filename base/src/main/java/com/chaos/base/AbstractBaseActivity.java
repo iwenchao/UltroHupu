@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.chaos.base.imp.OnNetReconnectListener;
 import com.chaos.base.mvp.IBaseView;
+import com.chaos.base.router.HPRouter;
 import com.chaos.widget.main.WidActionTitleBar;
 import com.chaos.widget.main.WidNetProgressView;
 
@@ -57,12 +58,20 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_layout);
+        initInjector();
         inflateContentUi();
         mViewUnbind = ButterKnife.bind(this);
+
 
         initThings(mContentLayout);
         loadInitDta();
     }
+
+    private void initInjector() {
+        //路由
+        HPRouter.inject(this);
+    }
+
 
     private void inflateContentUi() {
         contentLayoutId = getContentLayoutId();
