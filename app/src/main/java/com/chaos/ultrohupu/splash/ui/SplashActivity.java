@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.bumptech.glide.Glide;
 import com.chaos.base.AbstractBaseActivity;
 import com.chaos.ultrohupu.R;
 import com.chaos.ultrohupu.constant.RouterPath;
@@ -43,9 +44,7 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
 
     @Override
     protected void initThings(View view) {
-
         mPresenter = new SplashPresenter(this);
-
     }
 
 
@@ -56,6 +55,6 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
 
     @Override
     public void updateContent(String imageUrl) {
-
+        Glide.with(this).load(imageUrl).into(mSplashAdImg);
     }
 }

@@ -61,10 +61,16 @@ public class WidActionTitleBar extends View implements ViewInterface {
     public WidActionTitleBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         mContext = getContext();
-        initAttr(attrs);
         initView();
+        initAttr(attrs);
     }
 
+
+    @Override
+    public void initView() {
+        mContainer = LayoutInflater.from(mContext).inflate(R.layout.action_title_bar_layout, null);
+        ButterKnife.bind(this, mContainer);
+    }
 
     @Override
     public void initAttr(AttributeSet attrs) {
@@ -105,12 +111,6 @@ public class WidActionTitleBar extends View implements ViewInterface {
             mTitleBarRightIcon.setVisibility(GONE);
         }
         ta.recycle();
-    }
-
-    @Override
-    public void initView() {
-        mContainer = LayoutInflater.from(mContext).inflate(R.layout.action_title_bar_layout, null);
-        ButterKnife.bind(mContainer);
     }
 
     public void setTitleBar(String title) {

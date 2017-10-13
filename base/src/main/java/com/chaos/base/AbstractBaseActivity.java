@@ -23,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by chaos
@@ -45,6 +46,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     @BindView(R2.id.progressLayout)
     FrameLayout mProgressLayout;//刷新内容显示
 
+    private Unbinder mViewUnbind;
     //有数据内容部分
     protected ViewGroup mContentView;
     //当前页面布局id
@@ -56,7 +58,7 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_layout);
         inflateContentUi();
-        ButterKnife.bind(this);
+        mViewUnbind = ButterKnife.bind(this);
 
         initThings(mContentLayout);
         loadInitDta();
@@ -211,5 +213,14 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     @Override
     public void onReconnect(String eventType, List params) {
         //默认不处理
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mViewUnbind != null) {
+            mViewUnbind.unbind();
+        }
     }
 }
