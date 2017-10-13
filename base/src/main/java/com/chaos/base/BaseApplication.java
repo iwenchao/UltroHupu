@@ -2,6 +2,7 @@ package com.chaos.base;
 
 import android.app.Application;
 
+import com.chaos.base.di.BaseInjector;
 import com.chaos.base.router.HPRouter;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
@@ -13,7 +14,7 @@ import com.squareup.leakcanary.RefWatcher;
  * Description:
  */
 
-public class HupuApplication extends Application {
+public class BaseApplication extends Application {
 
     private RefWatcher mRefWatcher;
 
@@ -24,6 +25,8 @@ public class HupuApplication extends Application {
         initLeaker();
         //
         initRouter();
+        //
+        initDagger();
     }
 
     private void initRouter() {
@@ -32,5 +35,9 @@ public class HupuApplication extends Application {
 
     private void initLeaker() {
         mRefWatcher = LeakCanary.install(this);
+    }
+
+    private void initDagger() {
+        BaseInjector.init(this, getPackageName());
     }
 }

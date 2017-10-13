@@ -10,8 +10,10 @@ import dagger.Component;
  * 该类为全局对象的依赖注入
  */
 @Singleton
-@Component(modules = HupuModule.class)
-public interface HupuComponent {
+@Component(modules = {
+        BaseModule.class
+})
+public interface BaseComponent {
 
 
 }

@@ -9,7 +9,7 @@ import dagger.Module;
  */
 
 @Module
-public class HupuModule {
+public class BaseModule {
 
 
 }
