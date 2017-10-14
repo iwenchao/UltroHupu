@@ -2,6 +2,8 @@ package com.chaos.base.mvp;
 
 import android.app.Activity;
 
+import com.trello.rxlifecycle2.RxLifecycle;
+
 import org.greenrobot.eventbus.EventBus;
 
 import io.reactivex.disposables.CompositeDisposable;
@@ -44,7 +46,11 @@ public abstract class BasePresenter<M extends IBaseModel, V extends IBaseView> i
         if (useEventBus())
             EventBus.getDefault().unregister(this);
         unDispose();
-
+        if (mModel != null)
+            mModel.onDestroy();
+        this.mModel = null;
+        this.mView = null;
+        this.mCompositeDisposable = null;
     }
 
     /**
