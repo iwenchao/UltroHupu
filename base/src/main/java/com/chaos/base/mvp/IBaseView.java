@@ -9,4 +9,5 @@ public interface IBaseView {
 
     void showNetLoading(boolean show);
 
+
 }

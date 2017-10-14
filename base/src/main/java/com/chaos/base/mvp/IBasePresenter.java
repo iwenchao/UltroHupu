@@ -8,7 +8,14 @@ package com.chaos.base.mvp;
  */
 
 public interface IBasePresenter {
+    /**
+     * 初始化操作
+     */
+    void onStart();
 
+    /**
+     * 结束后做一些清理操作
+     */
     void onDestroy();
 
 }

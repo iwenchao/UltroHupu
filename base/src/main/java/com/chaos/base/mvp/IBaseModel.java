@@ -6,4 +6,8 @@ package com.chaos.base.mvp;
  */
 
 public interface IBaseModel {
+    /**
+     * 清除操作
+     */
+    void onDestroy();
 }
