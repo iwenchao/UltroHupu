@@ -2,9 +2,6 @@ package com.chaos.ultrohupu.splash.presenter;
 
 import com.chaos.base.mvp.BasePresenter;
 import com.chaos.ultrohupu.splash.contract.SplashContract;
-import com.chaos.ultrohupu.splash.model.SplashModel;
-
-import javax.inject.Inject;
 
 /**
  * Created by huangdou
@@ -13,14 +10,16 @@ import javax.inject.Inject;
 
 public class SplashPresenter extends BasePresenter<SplashContract.Model, SplashContract.View> implements SplashContract.Presenter {
 
-    @Inject
-    SplashModel mModel;
+
 
 
     public SplashPresenter(SplashContract.View view) {
         super(view);
     }
 
+    public SplashPresenter(SplashContract.Model model, SplashContract.View view) {
+        super(model, view);
+    }
 
     @Override
     public void fetchSplashRes() {

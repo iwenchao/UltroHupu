@@ -1,6 +1,7 @@
 package com.chaos.ultrohupu.di;
 
 import com.chaos.base.di.imp.IInjector;
+import com.chaos.base.utils.LogUtils;
 import com.chaos.ultrohupu.HomeActivity;
 import com.chaos.ultrohupu.splash.ui.SplashActivity;
 
@@ -21,6 +22,7 @@ public class AppInjector implements IInjector {
 
     @Override
     public void inject(Object target) {
+        LogUtils.i("start App injector");
         if (target instanceof SplashActivity) {
             sAppComponent.inject((SplashActivity) target);
         } else if (target instanceof HomeActivity) {

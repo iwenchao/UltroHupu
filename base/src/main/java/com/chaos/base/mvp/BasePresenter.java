@@ -4,8 +4,6 @@ import android.app.Activity;
 
 import com.trello.rxlifecycle2.RxLifecycle;
 
-import org.greenrobot.eventbus.EventBus;
-
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
@@ -36,15 +34,12 @@ public abstract class BasePresenter<M extends IBaseModel, V extends IBaseView> i
 
     @Override
     public void onStart() {
-        if (useEventBus()) {
-            EventBus.getDefault().register(this);
-        }
+
     }
+
 
     @Override
     public void onDestroy() {
-        if (useEventBus())
-            EventBus.getDefault().unregister(this);
         unDispose();
         if (mModel != null)
             mModel.onDestroy();
@@ -53,14 +48,6 @@ public abstract class BasePresenter<M extends IBaseModel, V extends IBaseView> i
         this.mCompositeDisposable = null;
     }
 
-    /**
-     * 是否使用eventBus
-     *
-     * @return 默认返回true，即默认使用
-     */
-    public boolean useEventBus() {
-        return true;
-    }
 
     /**
      * 将 {@link Disposable} 添加到 {@link CompositeDisposable} 中统一管理

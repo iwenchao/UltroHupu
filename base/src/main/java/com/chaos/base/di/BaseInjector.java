@@ -2,6 +2,7 @@ package com.chaos.base.di;
 
 import com.chaos.base.BaseApplication;
 import com.chaos.base.di.imp.IInjector;
+import com.chaos.base.utils.LogUtils;
 
 /**
  * Created by huangdou
@@ -21,6 +22,7 @@ public class BaseInjector implements IInjector {
 
     @Override
     public void inject(Object target) {
+        LogUtils.i("start Base injector");
         if (target instanceof BaseApplication) {
             sBaseComponent.inject((BaseApplication) target);
         }/*else if(){

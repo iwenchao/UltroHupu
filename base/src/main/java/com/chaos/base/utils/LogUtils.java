@@ -22,6 +22,7 @@ public final class LogUtils {
         Logger.init(tag).setMethodCount(5).setLogLevel(showLog ? LogLevel.FULL : LogLevel.NONE);
     }
 
+
     public static void d(String message) {
         Logger.d(message);
     }

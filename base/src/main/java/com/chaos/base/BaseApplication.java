@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.chaos.base.di.HPInjector;
 import com.chaos.base.router.HPRouter;
+import com.chaos.base.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -27,6 +28,8 @@ public class BaseApplication extends Application {
         initRouter();
         //
         initDagger2();
+        //
+        initLog();
     }
 
     private void initRouter() {
@@ -39,5 +42,9 @@ public class BaseApplication extends Application {
 
     private void initDagger2() {
         HPInjector.init(this, getPackageName());
+    }
+
+    private void initLog() {
+        LogUtils.init(getPackageName(), BuildConfig.DEBUG);
     }
 }

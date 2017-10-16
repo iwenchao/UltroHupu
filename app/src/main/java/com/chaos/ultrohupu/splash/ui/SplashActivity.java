@@ -9,6 +9,7 @@ import com.chaos.base.AbstractBaseActivity;
 import com.chaos.ultrohupu.R;
 import com.chaos.ultrohupu.constant.RouterPath;
 import com.chaos.ultrohupu.splash.contract.SplashContract;
+import com.chaos.ultrohupu.splash.model.SplashModel;
 import com.chaos.ultrohupu.splash.presenter.SplashPresenter;
 import com.chaos.widget.main.WidJumpView;
 
@@ -33,6 +34,8 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
     @BindView(R.id.splashJump)
     WidJumpView mSplashJump;
 
+    @Inject
+    SplashModel mModel;
     SplashContract.Presenter mPresenter;
 
 
@@ -43,7 +46,7 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
 
     @Override
     protected void initThings(View view) {
-        mPresenter = new SplashPresenter(this);
+        mPresenter = new SplashPresenter(mModel, this);
     }
 
 

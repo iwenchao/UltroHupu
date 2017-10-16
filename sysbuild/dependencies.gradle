@@ -1,4 +1,4 @@
-def applicationId = "com.example.chaos.ultrohupu"
+def applicationId = "com.chaos.ultrohupu"
 def toolsGradleVersion = "2.3.3"
 def buildToolsVersion = '25.0.0'
 def compileSdkVersion = 25

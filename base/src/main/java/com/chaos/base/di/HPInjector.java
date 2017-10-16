@@ -1,5 +1,7 @@
 package com.chaos.base.di;
 
+import com.chaos.base.utils.LogUtils;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,16 +35,8 @@ public class HPInjector {
             mInjector.newInstance();
             mInjector.getDeclaredMethod("initComponent").setAccessible(true);
             mInjector.getMethod("initComponent").invoke(null);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            LogUtils.e(e);
         }
     }
 
@@ -68,7 +62,7 @@ public class HPInjector {
     public static void inject(Object target) {
         try {
             mInjector.getDeclaredMethod("inject", Object.class).setAccessible(true);
-            mInjector.getMethod("inject", Object.class).invoke(null, target);
+            mInjector.getMethod("inject", Object.class).invoke(target);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
