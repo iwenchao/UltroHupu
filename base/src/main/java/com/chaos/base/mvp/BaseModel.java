@@ -11,9 +11,14 @@ import javax.inject.Inject;
  * Description:
  */
 
-public abstract class BaseModel {
+public abstract class BaseModel implements IBaseModel {
 
     @Inject
     JsonUtils mJsonUtils;
 
+
+    @Override
+    public void onDestroy() {
+
+    }
 }

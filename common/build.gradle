@@ -5,7 +5,6 @@ android {
     compileSdkVersion rootProject.ext.dependencies["compileSdkVersion"]
     buildToolsVersion rootProject.ext.dependencies["buildToolsVersion"]
 
-
     defaultConfig {
         minSdkVersion rootProject.ext.dependencies["minSdkVersion"]
         targetSdkVersion rootProject.ext.dependencies["targetSdkVersion"]

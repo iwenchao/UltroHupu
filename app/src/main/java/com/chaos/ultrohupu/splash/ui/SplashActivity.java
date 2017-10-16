@@ -33,7 +33,6 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
     @BindView(R.id.splashJump)
     WidJumpView mSplashJump;
 
-    @Inject
     SplashContract.Presenter mPresenter;
 
 

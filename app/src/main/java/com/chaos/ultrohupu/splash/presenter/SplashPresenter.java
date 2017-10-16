@@ -11,7 +11,7 @@ import javax.inject.Inject;
  * on 2017/10/10.
  */
 
-public class SplashPresenter extends BasePresenter<SplashContract.View> implements SplashContract.Presenter {
+public class SplashPresenter extends BasePresenter<SplashContract.Model, SplashContract.View> implements SplashContract.Presenter {
 
     @Inject
     SplashModel mModel;
