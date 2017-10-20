@@ -72,4 +72,17 @@
 
     </declare-styleable>
 
+
+    <declare-styleable name="LimitEditView">
+        <attr name="sort" format="integer" />
+        <attr name="maxCount" format="integer" />
+        <attr name="ignoreCnOrEn" format="boolean" />
+        <attr name="hintText" format="string|reference" />
+        <attr name="hintTextColor" format="color|reference" />
+        <attr name="contentText" format="string|reference" />
+        <attr name="contentTextSize" format="dimension|reference" />
+        <attr name="contentTextColor" format="color|reference" />
+        <attr name="contentViewHeight" format="dimension|reference" />
+    </declare-styleable>
+
 </resources>

@@ -13,8 +13,6 @@ import javax.inject.Inject;
 
 public abstract class BaseModel implements IBaseModel {
 
-    @Inject
-    JsonUtils mJsonUtils;
 
 
     @Override

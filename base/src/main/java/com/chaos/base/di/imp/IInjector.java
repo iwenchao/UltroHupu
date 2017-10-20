@@ -9,6 +9,10 @@ package com.chaos.base.di.imp;
  */
 
 public interface IInjector {
+
+    String INIT_COMPONENT = "initComponent";
+    String INJECT = "inject";
+
     /**
      * 初始化component
      */
@@ -19,5 +23,7 @@ public interface IInjector {
      *
      * @param target 目标被注入对象
      */
-    void inject(Object target);
+    boolean inject(Object target);
+
+
 }

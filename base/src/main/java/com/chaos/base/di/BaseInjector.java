@@ -11,22 +11,38 @@ import com.chaos.base.utils.LogUtils;
 
 public class BaseInjector implements IInjector {
 
-    static BaseComponent sBaseComponent;
+    private BaseComponent sBaseComponent;
+    private BaseModule sBaseModule;
 
     @Override
     public void initComponent() {
-        sBaseComponent = DaggerBaseComponent.builder().baseModule(new BaseModule()).build();
+
     }
 
+    public BaseModule getModule() {
+        if (sBaseModule == null) {
+            synchronized (BaseInjector.class) {
+                if (sBaseModule == null) {
+                    sBaseModule = new BaseModule();
+                }
+            }
+        }
+        return sBaseModule;
+    }
 
+    public void setComponent(BaseComponent baseComponent) {
+        sBaseComponent = baseComponent;
+    }
 
     @Override
-    public void inject(Object target) {
+    public boolean inject(Object target) {
         LogUtils.i("start Base injector");
-        if (target instanceof BaseApplication) {
+        Class tClass = target.getClass();
+        if (tClass == BaseApplication.class) {
             sBaseComponent.inject((BaseApplication) target);
-        }/*else if(){
-
-        }*/
+        } else {
+            return false;
+        }
+        return true;
     }
 }

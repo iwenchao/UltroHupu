@@ -13,8 +13,6 @@ import com.chaos.ultrohupu.splash.model.SplashModel;
 import com.chaos.ultrohupu.splash.presenter.SplashPresenter;
 import com.chaos.widget.main.WidJumpView;
 
-import javax.inject.Inject;
-
 import butterknife.BindView;
 
 /**
@@ -34,8 +32,8 @@ public class SplashActivity extends AbstractBaseActivity implements SplashContra
     @BindView(R.id.splashJump)
     WidJumpView mSplashJump;
 
-    @Inject
-    SplashModel mModel;
+    SplashModel mModel = new SplashModel();
+
     SplashContract.Presenter mPresenter;
 
 

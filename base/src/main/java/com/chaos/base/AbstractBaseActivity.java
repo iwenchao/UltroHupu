@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.chaos.base.utils.HPInjectUtils;
 import com.chaos.base.imp.OnNetReconnectListener;
 import com.chaos.base.mvp.IBaseView;
 import com.chaos.base.router.HPRouter;
@@ -34,7 +35,6 @@ import butterknife.Unbinder;
 public abstract class AbstractBaseActivity extends FragmentActivity implements OnNetReconnectListener, IBaseView {
     protected Context mContext;
 
-    @BindView(R2.id.rootContentView)
     LinearLayout mRootContentView;//根视图
     @BindView(R2.id.contentLayout)
     FrameLayout mContentLayout;//内容视图
@@ -58,18 +58,27 @@ public abstract class AbstractBaseActivity extends FragmentActivity implements O
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base_layout);
+        initRootView();
         initInjector();
         inflateContentUi();
-        mViewUnbind = ButterKnife.bind(this);
+        mViewUnbind = ButterKnife.bind(this, mContentView);
 
 
         initThings(mContentLayout);
         loadInitDta();
     }
 
+    private void initRootView() {
+        mRootContentView = (LinearLayout) findViewById(R.id.rootContentView);
+        mRootContentView = (LinearLayout) findViewById(R.id.rootContentView);
+        mRootContentView = (LinearLayout) findViewById(R.id.rootContentView);
+    }
+
     private void initInjector() {
         //路由
         HPRouter.inject(this);
+        //
+        HPInjectUtils.inject(this);
     }
 
 

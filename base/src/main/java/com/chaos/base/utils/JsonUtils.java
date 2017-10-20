@@ -35,7 +35,6 @@ public class JsonUtils {
 
     private ObjectMapper objectMapper = null;
 
-    @Inject
     public JsonUtils(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
         this.objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
